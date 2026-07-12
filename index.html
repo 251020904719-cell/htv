@@ -1,182 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite Animals</title>
-
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            margin:0;
-            background:#f4f4f4;
-        }
-
-        /* --- CODE BỔ SUNG: CSS cho nút Bỏ qua đến nội dung chính --- */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #e74c3c;
-            color: white;
-            padding: 8px;
-            z-index: 100;
-            text-decoration: none;
-        }
-        .skip-link:focus {
-            top: 0; /* Hiện lên khi người dùng nhấn nút Tab trên bàn phím */
-        }
-
-        header{
-            background:#2c3e50;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-
-        /* --- BƯỚC 4: Thay đổi nav thành khối nội tuyến và rộng 80% --- */
-        nav{
-            background:#34495e;
-            padding:10px;
-            text-align:center;
-            display: inline-block; /* Thay đổi thành khối nội tuyến */
-            width: 80%;            /* Chiều rộng khoảng 80% */
-            margin: 0 auto;        /* Căn giữa thanh nav */
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-        }
-
-        /* --- BƯỚC 5: Bộ chọn hậu duệ chỉnh hình ảnh trong nav rộng 10% --- */
-        nav img {
-            width: 10%;
-            height: auto;
-        }
-
-        main{
-            width:80%;
-            margin:30px auto;
-            background:white;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,.2);
-        }
-
-        footer{
-            background:#2c3e50;
-            color:white;
-            text-align:center;
-            padding:15px;
-            margin-top:30px;
-        }
-
-        /* --- BƯỚC 3: Nhận xét kiểu dáng hiện tại cho phần tử li --- */
-        ul{
-            line-height:2;
-        }
-        
-        ul li {
-            /* Nhận xét: li hiện tại đang thừa hưởng thuộc tính line-height:2 từ ul và có dấu chấm danh sách mặc định */
-        }
-
-        /* --- BƯỚC 6 & 8: Thay đổi .gallery thành lưới (Grid) hai cột --- */
-        .gallery{
-            text-align:center;
-            display: grid;
-            grid-template-columns: 40% 40%; /* Mỗi cột xấp xỉ 40% */
-            justify-content: space-around;  /* Thuộc tính căn chỉnh theo Bước 8 */
-            align-items: center;             /* Thuộc tính căn chỉnh theo Bước 8 */
-            row-gap: 20px;                   /* Khoảng cách hàng theo Bước 8 */
-        }
-
-        /* --- BƯỚC 7: Bộ chọn hậu duệ chỉnh ảnh trong lớp lưới rộng 100% --- */
-        .gallery img {
-            width: 100%;       /* Chiều rộng 100% thay vì cố định 300px để co giãn theo lưới */
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        /* --- BƯỚC 9: Tạo sẵn lớp flex sử dụng flex-wrap và justify-content --- */
-        .flex-class {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-    </style>
-
+    <title>Trang chủ - HTV Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<a href="#main" class="skip-link">Chuyển đến Nội dung chính</a>
+    <!-- Yêu cầu 3: Liên kết Chuyển đến Nội dung chính -->
+    <a href="#main-content" class="skip-link">Chuyển đến Nội dung chính</a>
 
-<header>
-    <h1>My Favorite Animals</h1>
-    <p>A simple HTML practice website</p>
-</header>
+    <header>
+        <h1>Dự án HTV - Phát triển Web</h1>
+        <p>Không gian sáng tạo và kết nối thông tin</p>
+    </header>
 
-<nav>
-    <a href="#animals">Animals</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#more">More Info</a>
-</nav>
+    <!-- Yêu cầu 4 & 7: Thanh điều hướng bắt mắt kết hợp sử dụng Flexbox -->
+    <nav class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+    </nav>
 
-<main id="main">
+    <!-- Thẻ main chứa thuộc tính id để liên kết skip-link nhảy tới -->
+    <main id="main-content">
+        
+        <section class="intro-section">
+            <h2>Chào mừng bạn đến với dự án HTV</h2>
+            <p>Trang web này được xây dựng nhằm mục đích tối ưu hóa kỹ năng thiết kế giao diện bằng HTML5 và CSS3 hiện đại. Chúng tôi tập trung ứng dụng các mô hình bố cục tiên tiến như Grid và Flexbox để mang lại trải nghiệm mượt mà nhất.</p>
+        </section>
 
-<section id="animals">
+        <!-- Yêu cầu 1 (>= 5 ảnh) & Yêu cầu 6 (Sử dụng Grid ít nhất 2 cột) -->
+        <section class="gallery-section">
+            <h2>Bộ sưu tập hình ảnh dự án</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <img src="hinh1.jpg" alt="Mô tả hình ảnh dự án 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="hinh2.jpg" alt="Mô tả hình ảnh dự án 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images.jpg" alt="Mô tả hình ảnh dự án 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="hinh1.jpg" alt="Mô tả hình ảnh dự án 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="hinh2.jpg" alt="Mô tả hình ảnh dự án 5">
+                </div>
+            </div>
+        </section>
 
-<h2>My Favorite Animals</h2>
+    </main>
 
-<ul>
-    <li>Dog</li>
-    <li>Cat</li>
-    <li>Tiger</li>
-</ul>
-
-</section>
-
-<section id="gallery">
-
-<h2>Animal Gallery</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500" alt="Dog">
-
-<img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=500" alt="Cat">
-
-<img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=500" alt="Tiger">
-
-</div>
-
-</section>
-
-<section id="more">
-
-<h2>Learn More</h2>
-
-<p>
-Visit
-<a href="https://en.wikipedia.org/wiki/Animal" target="_blank">
-Wikipedia
-</a>
-to learn more about animals.
-</p>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>Created by Hoang Vu Huy © 2026</p>
-
-</footer>
+    <footer>
+        <p>&copy; 2026 Dự án HTV. Bản quyền thuộc về tác giả.</p>
+    </footer>
 
 </body>
 </html>
