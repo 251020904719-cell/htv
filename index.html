@@ -178,6 +178,26 @@
     <footer>
         <p>&copy; 2026 Dự án HTV. Bản quyền thuộc về tác giả.</p>
     </footer>
+<script>
+        function upDate(previewPic) {
+            console.log("Sự kiện upDate đã được kích hoạt thành công!");
+            console.log("Mô tả của ảnh (Alt): " + previewPic.alt);
+            console.log("Đường dẫn của ảnh (Source): " + previewPic.src);
 
+            var targetDiv = document.getElementById("image");
+            targetDiv.innerHTML = previewPic.alt;
+            targetDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+        }
+
+        function unDo() {
+            var targetDiv = document.getElementById("image");
+            targetDiv.style.backgroundImage = "url('')";
+            targetDiv.innerHTML = "Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.";
+            
+            console.log("Sự kiện unDo kích hoạt: Đã khôi phục giao diện mặc định.");
+        }
+    </script>
+
+</body>
 </body>
 </html>
